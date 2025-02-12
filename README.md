@@ -5,6 +5,7 @@ RNA editing is a crucial post-transcriptional mechanism that alters RNA sequence
 
 We introduce a liver-specific dataset, where ADAR1 is the predominant enzyme, and train models progressively on editing thresholds (1%, 5%, 10%, 15%), improving classification accuracy compared to traditional fine-tuning methods.
 
+
 ## 🧬 Methodology
 Our approach focuses on improving RNA editing site prediction using transformer-based models, specifically **GPT-4o-mini**, in a **continual fine-tuning (CFT)** paradigm. This methodology allows the model to progressively learn from lower to higher editing thresholds (1%, 5%, 10%, 15%), refining its understanding of RNA editing patterns.
 
@@ -25,4 +26,30 @@ We trained the model using a **liver-specific dataset** derived from GTEx, ensur
    - Assessment of **overlapping vs. non-overlapping threshold binning**.
    - Performance measured via **accuracy, precision, recall, F1-score**.
    - **Figures from the study** (to be included) illustrate the effectiveness of our approach.
+  
+
+
+## Repository Structure
+
+   
+## Getting Started
+### Requirments
+
+First, clone this repository. 
+
+You may use the file  `environment.yml` to create anaconda environment (python 3.8) with the required packages.
+
+### Steps to Use the environment.yml File:
+#### Create the Environment:
+1. Save the `environment.yml` file in your project directory, then run the following command:
+   
+```
+conda env create -f environment.yml
+```
+
+2. Activate the Environment:
+   
+```
+conda activate rna_editing
+```
 
