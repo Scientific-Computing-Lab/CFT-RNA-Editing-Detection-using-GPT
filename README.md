@@ -25,8 +25,8 @@ We trained the model using a **liver-specific dataset** derived from GTEx, ensur
    - Comparison between **static fine-tuning** and **continual fine-tuning**.
    - Assessment of **overlapping vs. non-overlapping threshold binning**.
    - Performance measured via **accuracy, precision, recall, F1-score**.
-   - **Figures from the study** (to be included) illustrate the effectiveness of our approach.
-  
+
+![methodology]()
 
 
 ## Repository Structure
