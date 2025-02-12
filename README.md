@@ -50,6 +50,6 @@ conda env create -f environment.yml
 2. Activate the Environment:
    
 ```
-conda activate rna_editing
+conda activate A2IRnaEditing
 ```
 
