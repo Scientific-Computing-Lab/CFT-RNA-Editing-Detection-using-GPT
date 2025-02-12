@@ -26,7 +26,7 @@ We trained the model using a **liver-specific dataset** derived from GTEx, ensur
    - Assessment of **overlapping vs. non-overlapping threshold binning**.
    - Performance measured via **accuracy, precision, recall, F1-score**.
 
-![methodology]()
+![methodology](images/methodology.png)
 
 
 ## Repository Structure
