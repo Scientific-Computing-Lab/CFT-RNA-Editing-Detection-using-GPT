@@ -1,4 +1,4 @@
-name: rna_editing
+name: A2IRnaEditing
 channels:
   - conda-forge
   - bioconda
