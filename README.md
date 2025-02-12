@@ -5,6 +5,11 @@ RNA editing is a crucial post-transcriptional mechanism that alters RNA sequence
 
 We introduce a liver-specific dataset, where ADAR1 is the predominant enzyme, and train models progressively on editing thresholds (1%, 5%, 10%, 15%), improving classification accuracy compared to traditional fine-tuning methods.
 
+### Key Contributions:
+   - Liver-Specific RNA Editing Analysis: Avoiding confounding multi-tissue variability.
+   - Continual Fine-Tuning (CFT): Training the model step-by-step from low (1%) to high (15%) editing levels.
+   - Improved Data Partitioning: Using strict, non-overlapping bins for clearer classification.
+
 
 ## 🧬 Methodology
 Our approach focuses on improving RNA editing site prediction using transformer-based models, specifically **GPT-4o-mini**, in a **continual fine-tuning (CFT)** paradigm. This methodology allows the model to progressively learn from lower to higher editing thresholds (1%, 5%, 10%, 15%), refining its understanding of RNA editing patterns.
