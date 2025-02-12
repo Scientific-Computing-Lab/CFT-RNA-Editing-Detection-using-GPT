@@ -16,7 +16,7 @@ Our approach focuses on improving RNA editing site prediction using transformer-
 
 We trained the model using a **liver-specific dataset** derived from GTEx, ensuring minimal interference from non-relevant ADAR isoforms. The training procedure included:
 
-A. **Data Collection & Preprocessing**
+A) **Data Collection & Preprocessing**
    - Extracting double-stranded RNA (dsRNA) structures from Alu elements.
    - Annotating editing levels based on GTEx liver data.
    - Predicting RNA secondary structures using ViennaRNA(RNAfold) and converting into Vienna format.
@@ -25,18 +25,19 @@ A. **Data Collection & Preprocessing**
    - Overlapping Sites: Multiple thresholds assigned per site (e.g., 1-5%, 5-10%).
    - Non-Overlapping Sites: Each site belongs to one distinct threshold to ensure clearer distinctions.
 
-2. **Continual Fine-Tuning Strategy**
-   - Initially training on a low-threshold dataset (1%).
-   - Gradually increasing thresholds (5%, 10%, 15%) to refine model performance.
-   - Ensuring each step retains prior knowledge while learning new distinctions.
+B) **RNA Editing as a Classification Problem**
 
-3. **Evaluation & Results**
-   - Comparison between **static fine-tuning** and **continual fine-tuning**.
-   - Assessment of **overlapping vs. non-overlapping threshold binning**.
-   - Performance measured via **accuracy, precision, recall, F1-score**.
+   - Framing RNA editing site prediction as a binary classification task.
+   - The model determines whether a given adenosine is edited (Yes/No) based on its sequence and structure.
+   - Training labels are derived from GTEx data, assigning a binary label to each adenosine.
 
+C) **Comparing Fine-Tuning Strategies (SFT vs. CFT)**
+
+   - Static Fine-Tuning (SFT): Training on a single threshold (e.g., only 15% editing).
+   - Continual Fine-Tuning (CFT): Gradual training from low (1%) to high (15%) editing levels.
+   - CFT enables better adaptation across editing ranges, leading to more robust classification performance.
+     
 ![methodology](images/methodology.png)
-
 
 ## Repository Structure
 
