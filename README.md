@@ -63,3 +63,19 @@ conda env create -f environment.yml
 conda activate A2IRnaEditing
 ```
 
+##Data Preparation
+
+**Classification Task**
+
+For the classification task, data preparation involves extracting RNA sequences, computing secondary structures, and assigning editing labels for liver tissue.
+Classification Data Creation Script: This script generates the dsRNA structure and processes RNA sequences to classify editing sites based on their structural and sequence context.
+
+To run this script, navigate to the scripts folder and use the following command:
+
+```
+python Classification_Data_Creation_Liver.py [-h] --pair_region PAIR_REGION --output_dir OUTPUT_DIR
+                                        --editing_site_plus EDITING_SITE_PLUS
+                                        --editing_site_minus EDITING_SITE_MINUS --genome GENOME
+
+
+
