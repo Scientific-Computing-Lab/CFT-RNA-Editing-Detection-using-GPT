@@ -100,5 +100,27 @@ Rscript Division_thresholds_non_overlapping.R -i <input file(data_for_prepare_cl
 ```
 This script allows a site to belong to multiple editing level categories, resulting in four output files similar to the overlapping approach.
 
+### 3.Preparing Data for GPT Fine-Tuning
+
+To prepare the data for GPT fine-tuning, navigate to the Script/data_preparation directory and run the following command:
+```
+python Model_Input_Preparation_Classification.py <input_csv>
+```
+This script processes the classification dataset into a structured JSONL format for model training and evaluation.
+Outputs:
+   - train_<timestamp>.jsonl – Training dataset
+   - valid_<timestamp>.jsonl – Validation dataset
+
+
+
+## Inference
+
+The inference process differs based on the training methodology used. In CFT (Continual Fine-Tuning), inference is performed iteratively, where each model serves as the basis for fine-tuning the next model. The key distinction is that each inference step is applied to a different model fine-tuned on progressively refined data. This approach allows for continuous improvement in predictions across multiple runs. In contrast, SFT (Single Fine-Tuning) involves training a model directly on a dataset with a specific editing level, making inference a one-step process where the model is applied directly to new data without iterative refinements.
+
+To perform inference, navigate to the Script/inferencing directory and run the following command:
+``` python inferencing.py <input_file> <output_file> <temperature>
+```
+Input: The <input_file> is the file created in the Model_Input_Preparation_Classification.py step.
+
 
 
