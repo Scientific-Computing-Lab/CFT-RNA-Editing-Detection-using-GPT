@@ -77,7 +77,29 @@ python Classification_Data_Creation_Liver.py [-h] --pair_region PAIR_REGION --ou
                                         --editing_site_plus EDITING_SITE_PLUS
                                         --editing_site_minus EDITING_SITE_MINUS --genome GENOME
 ```
+Outputs:
+   - data_for_prepare_classification.csv – Processed classification data
 
+**Data Balancing by Editing Thresholds**
+
+Data balancing ensures equal representation of edited and non-edited sites across different editing levels, preventing bias in model training.
+
+
+*Overlapping Sites*
+
+To generate balanced classification datasets for different editing thresholds, navigate to the Script/data_preparation directory and run the following command:
+```
+Rscript Division_thresholds_overlapping.R -i <input file(data_for_prepare_classification.csv)> -o < output_dir>
+```
+This script divides the dataset into overlapping editing levels (1%, 5%, 10%, 15%) and ensures balanced distributions of edited and non-edited sites. The output consists of four files, each corresponding to a different threshold.
+
+*Non-Overlapping Sites*
+
+For non-overlapping classification thresholds, use the following command:
+```
+Rscript Division_thresholds_non_overlapping.R -i <input file(data_for_prepare_classification.csv)> -o < output_dir>
+```
+This script allows a site to belong to multiple editing level categories, resulting in four output files similar to the overlapping approach.
 
 
 
