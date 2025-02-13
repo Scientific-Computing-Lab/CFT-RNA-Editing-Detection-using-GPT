@@ -84,7 +84,7 @@ Outputs:
 
 Data balancing ensures equal representation of edited and non-edited sites across different editing levels, preventing bias in model training.
 
-*Overlapping Sites*
+#### Overlapping Sites
 
 To generate balanced classification datasets for different editing thresholds, navigate to the Script/data_preparation directory and run the following command:
 ```
@@ -92,7 +92,7 @@ Rscript Division_thresholds_overlapping.R -i <input file(data_for_prepare_classi
 ```
 This script divides the dataset into overlapping editing levels (1%, 5%, 10%, 15%) and ensures balanced distributions of edited and non-edited sites. The output consists of four files, each corresponding to a different threshold.
 
-*Non-Overlapping Sites*
+#### Non-Overlapping Sites
 
 For non-overlapping classification thresholds, use the following command:
 ```
