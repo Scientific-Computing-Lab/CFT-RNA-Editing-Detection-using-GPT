@@ -89,7 +89,7 @@ def count_letter(sequence, letter):
             count += 1
     return count
 
-def get_data_for_editing_level(tuple_list, index,editing_level):
+def get_data_for_editing_level(tuple_list, index):
     for idx, val in tuple_list:
         if idx == index:
             return val
@@ -202,7 +202,7 @@ def check_no_overlap(list1, list2):
     else:
         return False
     
-def generate_full_context(sequence, structure,all_A_data,chr1,start1,end1,chr2,start2,end2,strand,editing_level):
+def generate_full_context(sequence, structure,all_A_data,chr1,start1,end1,chr2,start2,end2,strand):
     """
     Generates the full_context Vienna format for adenosines in the sequence.
     
@@ -219,7 +219,7 @@ def generate_full_context(sequence, structure,all_A_data,chr1,start1,end1,chr2,s
             ds = 2
         L = sequence[0:position]
         R = sequence[position+1:]
-        editing_level_val = get_data_for_editing_level(all_A_data,position+1,editing_level)
+        editing_level_val = get_data_for_editing_level(all_A_data,position+1)
         substructures.append((chr1,start1,end1,chr2,start2,end2,strand,sequence,0,0, structure,L,R,editing_level_val,position))
 
     
@@ -282,7 +282,7 @@ def generate_abbreviated_vienna(sequence, structure,all_A_data,chr1,start1,end1,
             up_pos = position - subrange2[0]
             L = combined_sequence[0:len(sub_seq1) + len(ds_link) + up_pos]
             R = combined_sequence[len(sub_seq1) + len(ds_link) + up_pos+1:]
-        editing_level_y_n = get_data_for_editing_level(all_A_data,position+1,editing_level)
+        editing_level_y_n = get_data_for_editing_level(all_A_data,position+1)
         substructures.append((chr1,start1,end1,chr2,start2,end2,strand,sequence, structure,combined_sequence,combined_structure,L,R,editing_level_y_n,position,sub_seq1,sub_struct1,sub_seq2,sub_struct2))
     
     return substructures
@@ -346,7 +346,7 @@ if __name__ == '__main__':
         structure = dbn_data[2]
 
     # Generate abbreviated Vienna formats
-        abbreviated_viennas = generate_full_context(sequence, structure,all_A_data,chr1,start1,end1,chr2,start2,end2,strand,args.editing_level)
+        abbreviated_viennas = generate_full_context(sequence, structure,all_A_data,chr1,start1,end1,chr2,start2,end2,strand)
         all_sub_alu = all_sub_alu + abbreviated_viennas           
 
     df_results = pd.DataFrame(all_sub_alu)
