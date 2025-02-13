@@ -350,8 +350,6 @@ if __name__ == '__main__':
         all_sub_alu = all_sub_alu + abbreviated_viennas           
 
     df_results = pd.DataFrame(all_sub_alu)
-    df_final_result_path = os.path.join(args.output_dir + "all_data_classification.csv")
-    df_results.to_csv(df_final_result_path, index=False, header=False)
     df_for_train = df_results.iloc[:,10:14]
     data_for_prepare = os.path.join(args.output_dir + "data_for_prepare_classification.csv")
     df_for_train.to_csv(data_for_prepare, index=False, header=['structure','L','R','editing_level'])
