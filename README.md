@@ -37,7 +37,7 @@ C) **Comparing Fine-Tuning Strategies (SFT vs. CFT)**
    - Continual Fine-Tuning (CFT): Gradual training from low (1%) to high (15%) editing levels.
    - CFT enables better adaptation across editing ranges, leading to more robust classification performance.
      
-![methodology](images/methodology.png)
+![methodology](Figure/methodology/methodology.png)
 
 ## Repository Structure
 
