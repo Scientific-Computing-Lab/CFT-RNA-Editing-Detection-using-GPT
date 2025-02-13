@@ -118,8 +118,7 @@ Outputs:
 The inference process differs based on the training methodology used. In CFT (Continual Fine-Tuning), inference is performed iteratively, where each model serves as the basis for fine-tuning the next model. The key distinction is that each inference step is applied to a different model fine-tuned on progressively refined data. This approach allows for continuous improvement in predictions across multiple runs. In contrast, SFT (Single Fine-Tuning) involves training a model directly on a dataset with a specific editing level, making inference a one-step process where the model is applied directly to new data without iterative refinements.
 
 To perform inference, navigate to the Script/inferencing directory and run the following command:
-``` python inferencing.py <input_file> <output_file> <temperature>
-```
+``` python inferencing.py <input_file> <output_file> <temperature> ```
 Input: The <input_file> is the file created in the Model_Input_Preparation_Classification.py step.
 
 
