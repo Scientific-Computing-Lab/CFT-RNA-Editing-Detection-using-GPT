@@ -352,7 +352,7 @@ if __name__ == '__main__':
     df_results = pd.DataFrame(all_sub_alu)
     df_for_train = df_results.iloc[:,10:14]
     data_for_prepare = os.path.join(args.output_dir + "data_for_prepare_classification.csv")
-    df_for_train.to_csv(data_for_prepare, index=False, header=['structure','L','R','editing_level'])
+    df_for_train.to_csv(data_for_prepare, index=False, header=['structure','L','R','EditingIndex'])
 
 
 
